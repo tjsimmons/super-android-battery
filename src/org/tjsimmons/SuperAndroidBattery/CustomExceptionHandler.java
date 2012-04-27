@@ -1,6 +1,7 @@
 package org.tjsimmons.SuperAndroidBattery;
 
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -49,6 +50,11 @@ public class CustomExceptionHandler implements UncaughtExceptionHandler {
     }
 
     private void writeToFile(String stacktrace, String filename) {
+    	  File parentDir = new File("/sdcard/superandroidbattery");
+    	  if (!parentDir.exists()) {
+    		  parentDir.mkdirs();
+    	  }
+    	  
         try {
             BufferedWriter bos = new BufferedWriter(new FileWriter(
                     localPath + "/" + filename));
