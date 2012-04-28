@@ -8,7 +8,7 @@
         android:id="@+id/status_image"
         android:layout_alignParentLeft="true"
         android:layout_centerVertical="true"
-        android:layout_width="72dp"
+        android:layout_width="72dp"asdfasdf
         android:layout_height="30dp"
         android:contentDescription="@string/description"
         android:scaleType="fitXY"
