@@ -107,22 +107,27 @@ public class BatteryUpdateService extends Service {
 	private void updateChargeStatus(Intent intent) {
 		////Log.v("BatteryUpdateService::updateChargeStatus", "updateChargeStatus called");
 	
-		String mDrawableName = "chargeoff";
+		String mDrawableName_1x1 = "energy_alpha";
+		String mDrawableName_2x1 = "charge_off_";
 		int status = intent.getIntExtra(BatteryManager.EXTRA_STATUS, -1);
         boolean isCharging = 	status == BatteryManager.BATTERY_STATUS_CHARGING ||
                 				status == BatteryManager.BATTERY_STATUS_FULL;
-        int statusID;
+        int statusID_2x1, statusID_1x1;
         
         if (isCharging) {
-        	mDrawableName = "chargeon";
+        	mDrawableName_2x1 = "charge_on_";
+        	mDrawableName_1x1 = "charge_yellow";
         }
         
-        mDrawableName += "alpha";
+        mDrawableName_2x1 += "alpha";
         
         //Log.v("BatteryUpdateService::updateChargeStatus", "Charge Status: " + isCharging + ", Image: " + mDrawableName);
         
-        statusID = getResources().getIdentifier(mDrawableName, "drawable", getPackageName());
-        views_2x1.setImageViewResource(R.id.charge_image_2x1, statusID);
+        statusID_1x1 = getResources().getIdentifier(mDrawableName_1x1, "drawable", getPackageName());
+        statusID_2x1 = getResources().getIdentifier(mDrawableName_2x1, "drawable", getPackageName());
+        
+        views_1x1.setImageViewResource(R.id.energy_image_1x1, statusID_1x1);
+        views_2x1.setImageViewResource(R.id.charge_image_2x1, statusID_2x1);
 	}
 	
 	private void updateCapacityStatus(Intent intent) {

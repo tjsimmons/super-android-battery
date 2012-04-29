@@ -29,7 +29,7 @@
 	        android:layout_width="fill_parent"
 	        android:layout_height="wrap_content"
 	        android:layout_gravity="center"
-	        android:src="@drawable/energyalpha"
+	        android:src="@drawable/energy_alpha"
 	        android:scaleType="fitXY"
 	        android:layout_marginTop="-7dp"
 	        android:contentDescription="@string/description" />
@@ -40,7 +40,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:src="@drawable/chargeonalpha"
+        android:src="@drawable/charge_on_alpha"
         android:contentDescription="@string/description" 
         android:scaleType="fitXY" 
         android:layout_weight="0.4" />    

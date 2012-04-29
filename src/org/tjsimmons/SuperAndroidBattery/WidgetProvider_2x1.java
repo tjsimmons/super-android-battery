@@ -3,7 +3,6 @@ package org.tjsimmons.SuperAndroidBattery;
 import android.appwidget.AppWidgetManager;
 import android.content.Context;
 import android.content.Intent;
-import android.widget.RemoteViews;
 
 public class WidgetProvider_2x1 extends BaseWidgetProvider {
 	//RemoteViews views;

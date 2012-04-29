@@ -3,10 +3,8 @@ package org.tjsimmons.SuperAndroidBattery;
 import android.appwidget.AppWidgetManager;
 import android.content.Context;
 import android.content.Intent;
-import android.widget.RemoteViews;
 
 public class WidgetProvider_1x1 extends BaseWidgetProvider {
-	RemoteViews views;
 	
 	@Override
 	public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {

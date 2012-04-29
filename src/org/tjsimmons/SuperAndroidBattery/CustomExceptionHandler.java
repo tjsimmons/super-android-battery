@@ -1,14 +1,6 @@
 package org.tjsimmons.SuperAndroidBattery;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.PrintWriter;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.lang.Thread.UncaughtExceptionHandler;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import android.content.Context;
 import android.content.Intent;
 
