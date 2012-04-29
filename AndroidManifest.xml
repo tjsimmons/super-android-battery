@@ -12,6 +12,13 @@
         android:icon="@drawable/icon"
         android:label="@string/app_name">
         
+        <!-- activities -->
+        <activity android:name=".WidgetConfigurationActivity">
+		    <intent-filter>
+		        <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE"/>
+		    </intent-filter>
+		</activity>
+        
         <!-- widgets -->
 	    <receiver android:name=".WidgetProvider_2x1" android:label="@string/widget_2x1" >
 	    	<intent-filter>
