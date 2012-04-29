@@ -16,7 +16,7 @@
         android:gravity="center">
        
 	    <ImageView
-	        android:id="@+id/status_image"        
+	        android:id="@+id/status_image_2x1"        
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:layout_gravity="center"
@@ -25,7 +25,7 @@
 	        android:src="@drawable/status_100" />
 	
 	    <ImageView
-	        android:id="@+id/energy_image"
+	        android:id="@+id/energy_image_2x1"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:layout_gravity="left"
@@ -36,7 +36,7 @@
     </LinearLayout>
    
     <ImageView
-        android:id="@+id/charge_image"
+        android:id="@+id/charge_image_2x1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"

@@ -10,7 +10,7 @@
     android:padding="8dp" >
        
 	    <ImageView
-	        android:id="@+id/status_image"        
+	        android:id="@+id/status_image_1x1"        
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:layout_gravity="center"
@@ -20,7 +20,7 @@
 	        android:src="@drawable/status_100" />
 	
 	    <ImageView
-	        android:id="@+id/energy_image"
+	        android:id="@+id/energy_image_1x1"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:layout_gravity="left"
