@@ -12,14 +12,18 @@
         android:icon="@drawable/icon"
         android:label="@string/app_name">
         
-	    <receiver android:name=".SuperAndroidBatteryWidgetProvider" android:label="@string/app_name" >
+        <!-- widgets -->
+	    <receiver android:name=".WidgetProvider_2x1" android:label="@string/app_name" >
 	    	<intent-filter>
 	        	<action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
 	    	</intent-filter>
-	    	<meta-data android:name="android.appwidget.provider"
-	               android:resource="@xml/meter_appwidget_provider" />
+	    	
+	    	<meta-data android:name="android.appwidget.provider" android:resource="@xml/widget_2x1" />
 		</receiver>
+		
+	    <!-- update service -->
 	    <service android:name="org.tjsimmons.SuperAndroidBattery.BatteryUpdateService"></service>
+	    
 	    <receiver android:name="org.tjsimmons.SuperAndroidBattery.BootCompletedReceiver">
 	        <intent-filter>
 				<action android:name="android.intent.action.BOOT_COMPLETED" />
