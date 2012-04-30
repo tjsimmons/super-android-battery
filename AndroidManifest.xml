@@ -37,9 +37,9 @@
 		</receiver>
 		
 	    <!-- update service -->
-	    <service android:name="org.tjsimmons.SuperAndroidBattery.BatteryUpdateService"></service>
+	    <service android:name=".BatteryUpdateService"></service>
 	    
-	    <receiver android:name="org.tjsimmons.SuperAndroidBattery.BootCompletedReceiver">
+	    <receiver android:name=".BootCompletedReceiver">
 	        <intent-filter>
 				<action android:name="android.intent.action.BOOT_COMPLETED" />
 				<category android:name="android.intent.category.HOME" />
