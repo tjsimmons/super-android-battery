@@ -48,8 +48,8 @@ public class BatteryUpdateService extends Service {
 		context = this;
 		appWidgetManager = AppWidgetManager.getInstance(context);
 		
-		views_2x1 = new RemoteViews(context.getPackageName(), R.layout.widget_2x1);
-		views_1x1 = new RemoteViews(context.getPackageName(), R.layout.widget_1x1);
+		views_2x1 = new RemoteViews(context.getPackageName(), R.layout.battery_widget_2x1);
+		views_1x1 = new RemoteViews(context.getPackageName(), R.layout.battery_widget_1x1);
 		
 		
 		widget_2x1 = new ComponentName(context, WidgetProvider_2x1.class);
