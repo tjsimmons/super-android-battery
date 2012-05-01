@@ -1,6 +1,5 @@
 package org.tjsimmons.SuperAndroidBattery;
 
-import android.app.IntentService;
 import android.app.Service;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
