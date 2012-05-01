@@ -2,5 +2,6 @@
     android:minWidth="146dp"
     android:minHeight="72dp"
     android:updatePeriodMillis="900000"
-    android:initialLayout="@layout/battery_widget_2x1">
+    android:initialLayout="@layout/battery_widget_2x1"
+    android:configure="org.tjsimmons.SuperAndroidBattery.WidgetPreferencesActivity">
 </appwidget-provider>

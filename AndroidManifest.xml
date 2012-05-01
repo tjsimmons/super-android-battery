@@ -12,6 +12,17 @@
         android:icon="@drawable/icon"
         android:label="@string/app_name">
         
+        <!-- activities -->
+        <activity android:name=".WidgetPreferencesActivity">
+	        <intent-filter>
+        		<action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
+    		</intent-filter>
+    		<intent-filter>
+    		    <action android:name="android.intent.action.MAIN" />
+	        	<category android:name="android.intent.category.LAUNCHER" />
+    		</intent-filter>
+	    </activity>
+	    
         <!-- widgets -->
 	    <receiver android:name=".WidgetProvider_2x1" android:label="@string/battery_widget_2x1" >
 	    	<intent-filter>
@@ -38,5 +49,6 @@
 				<category android:name="android.intent.category.HOME" />
 			</intent-filter>
 	    </receiver>
+	    
 	</application>
 </manifest>
