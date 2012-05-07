@@ -1,7 +1,6 @@
 package org.tjsimmons.SuperAndroidBattery;
 
 import android.appwidget.AppWidgetManager;
-import android.appwidget.AppWidgetProvider;
 import android.appwidget.AppWidgetProviderInfo;
 import android.content.Context;
 import android.content.Intent;
@@ -9,7 +8,6 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceManager;
-import android.util.Log;
 import android.view.View;
 
 public class WidgetPreferencesActivity extends PreferenceActivity {	
@@ -17,6 +15,7 @@ public class WidgetPreferencesActivity extends PreferenceActivity {
 	Bundle extras;
 	int mAppWidgetId;
 	final Context context = WidgetPreferencesActivity.this;
+	BaseWidgetProvider widgetProvider;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -26,6 +25,7 @@ public class WidgetPreferencesActivity extends PreferenceActivity {
 		
 		intent = getIntent();
 		extras = intent.getExtras();
+		widgetProvider = new BaseWidgetProvider();
 		
 		// bind our save button
 		findViewById(R.id.save).setOnClickListener(mOnClickListener);
@@ -36,16 +36,9 @@ public class WidgetPreferencesActivity extends PreferenceActivity {
 	}
 	
 	public void savePreferences() {
-		SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
         AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(context);
-        AppWidgetProviderInfo widgetInfo = appWidgetManager.getAppWidgetInfo(mAppWidgetId);
         
-        // update our widget according to the widget being added        
-        if (widgetInfo.label.equals("Super Android Battery (2x1)")) {
-        	BaseWidgetProvider.update2x1AppWidget(context, appWidgetManager, mAppWidgetId, sharedPrefs.getBoolean("use_percentage", false));
-        } else if (widgetInfo.label.equals("Super Android Battery (1x1)")) {
-        	BaseWidgetProvider.update1x1AppWidget(context, appWidgetManager, mAppWidgetId);
-        }
+        widgetProvider.updateWidgets(context, appWidgetManager);
 	}
 	
 	View.OnClickListener mOnClickListener = new View.OnClickListener() {

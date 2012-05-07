@@ -78,7 +78,7 @@ public class BatteryUpdater {
 	
 	private void updateChargeStatus(Intent intent, boolean under20) {	
 		String mDrawableName_1x1 = "energy_alpha", mDrawableName_2x1 = "charge_off_", mEnergyName = "energy_alpha";
-		int status = intent.getIntExtra(BatteryManager.EXTRA_STATUS, -1);
+		int status = intent.getIntExtra("status", -1);
         boolean isCharging = 	status == BatteryManager.BATTERY_STATUS_CHARGING ||
                 				status == BatteryManager.BATTERY_STATUS_FULL;
         int statusID_2x1, statusID_1x1, energyID;

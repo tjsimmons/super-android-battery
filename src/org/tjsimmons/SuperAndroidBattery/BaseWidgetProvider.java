@@ -5,8 +5,7 @@ import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
 import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
-import android.widget.RemoteViews;
+import android.content.IntentFilter;
 
 public class BaseWidgetProvider extends AppWidgetProvider {
 	BatteryUpdater updater;
@@ -14,25 +13,31 @@ public class BaseWidgetProvider extends AppWidgetProvider {
 	@Override
 	public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
 		Intent intent = new Intent(context, BatteryUpdateService.class);
-		context.startService(intent);
+		context.startService(intent);		
 		
 		updater = new BatteryUpdater(context);
 	}
 	
-	public static void update2x1AppWidget(Context context, AppWidgetManager manager, int appWidgetId, boolean usePercentage) {
-		RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.battery_widget_2x1);
+	public void updateWidgets(Context context, AppWidgetManager manager) {
+		//RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.battery_widget_2x1);
 		
-		if (usePercentage) {
-			// we're supposed to use the %
-			Log.v("usePercentage", new Boolean(usePercentage).toString());
+		if (updater == null) {
+			updater = new BatteryUpdater(context);
 		}
 		
-		manager.updateAppWidget(appWidgetId, views);		
+		//manager.updateAppWidget(appWidgetId, views);
+		Intent intent = context.getApplicationContext().registerReceiver(null, new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
+		
+		updater.updateStatus(intent);
 	}
 	
-	public static void update1x1AppWidget(Context context, AppWidgetManager manager, int appWidgetId) {
+	/*public void update1x1AppWidget(Context context, AppWidgetManager manager, int appWidgetId) {
 		RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.battery_widget_1x1);
 		
+		if (updater == null) {
+			updater = new BatteryUpdater(context);
+		}
+		
 		manager.updateAppWidget(appWidgetId, views);
-	}
+	}*/
 }
