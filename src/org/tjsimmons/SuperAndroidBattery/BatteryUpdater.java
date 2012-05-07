@@ -104,7 +104,9 @@ public class BatteryUpdater {
         
         // if we want to use % instead, do that
         if (sharedPrefs.getBoolean("use_percentage", false)) {
-        	
+        	DrawingPanel panel = new DrawingPanel(context);
+        	views_2x1.addView(panel.getId(), new RemoteViews(context.getPackageName(), R.id.linear_parent));
+        	panel.drawPercentage("10");
         } else {
         	views_2x1.setImageViewResource(R.id.charge_image_2x1, statusID_2x1);
         }

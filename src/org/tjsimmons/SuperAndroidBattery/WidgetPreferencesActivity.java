@@ -1,13 +1,10 @@
 package org.tjsimmons.SuperAndroidBattery;
 
 import android.appwidget.AppWidgetManager;
-import android.appwidget.AppWidgetProviderInfo;
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
-import android.preference.PreferenceManager;
 import android.view.View;
 
 public class WidgetPreferencesActivity extends PreferenceActivity {	

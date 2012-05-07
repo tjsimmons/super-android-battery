@@ -13,31 +13,19 @@ public class BaseWidgetProvider extends AppWidgetProvider {
 	@Override
 	public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
 		Intent intent = new Intent(context, BatteryUpdateService.class);
-		context.startService(intent);		
-		
 		updater = new BatteryUpdater(context);
+		
+		context.startService(intent);
 	}
 	
 	public void updateWidgets(Context context, AppWidgetManager manager) {
-		//RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.battery_widget_2x1);
-		
 		if (updater == null) {
 			updater = new BatteryUpdater(context);
 		}
 		
-		//manager.updateAppWidget(appWidgetId, views);
+		// for sticky broadcasts, you can register a null receiver to get the last sent broadcast without registering for future broadcasts.
 		Intent intent = context.getApplicationContext().registerReceiver(null, new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
 		
 		updater.updateStatus(intent);
 	}
-	
-	/*public void update1x1AppWidget(Context context, AppWidgetManager manager, int appWidgetId) {
-		RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.battery_widget_1x1);
-		
-		if (updater == null) {
-			updater = new BatteryUpdater(context);
-		}
-		
-		manager.updateAppWidget(appWidgetId, views);
-	}*/
 }

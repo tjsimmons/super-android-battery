@@ -13,7 +13,8 @@
         android:layout_width="0dp"
         android:layout_height="fill_parent"
         android:layout_gravity="center"
-        android:gravity="center">
+        android:gravity="center"
+        android:id="@+id/linear_parent">
        
 	    <ImageView
 	        android:id="@+id/status_image_2x1"        
@@ -26,7 +27,7 @@
 	
 	    <ImageView
 	        android:id="@+id/energy_image_2x1"
-	        android:layout_width="fill_parent"
+	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:layout_gravity="center"
 	        android:src="@drawable/energy_alpha"
@@ -34,7 +35,7 @@
 	        android:layout_marginTop="-7dp"
 	        android:contentDescription="@string/description" />
     </LinearLayout>
-   
+	    
     <ImageView
         android:id="@+id/charge_image_2x1"
         android:layout_width="0dp"
@@ -42,6 +43,6 @@
         android:layout_gravity="center"
         android:src="@drawable/charge_on_alpha"
         android:contentDescription="@string/description" 
-        android:scaleType="fitXY" 
-        android:layout_weight="0.4" />    
+        android:scaleType="fitXY"
+        android:layout_weight="0.4" />
 </LinearLayout>
